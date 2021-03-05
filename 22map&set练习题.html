@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 利用set 去重
+
+        // 2 map
+
+        let map = new Map([
+            ['age','123'],
+            ['name','aaa']
+        ])
+
+        // 1 将 map 变为 数组 arr
+        // let arr = [...map];
+        let arr =Array.from(map)
+        
+
+        // 2 将 arr 变为 set 数据 set
+        let set = new Set(arr)
+
+        let obj = {
+            name:'aaa',
+            age:5,
+            gender:'amlse'
+        }
+
+        // 3 将obj 转为 map 集合
+        // let map1 = new Map()
+        // for(let key in obj){
+        //     map1.set(key,obj[key])
+        // }
+        // 第二种方式
+        // let res = Object.entries(obj);// 获取对象中所有的键值对，[['name','aaa'],['age',5]]
+        // let map1 = new Map(res)
+        // 方式三
+        let map1 = new Map()
+        let res= Object.entries(obj);
+        res.forEach(([key,value])=> {
+            map1.Set(key,value)
+        });
+
+        // 4 利用set 方式实现数组合并再去重
+        let a = [1,2,2,2,3,3,3,3,3,3]
+        let b = ['s','s','ss','sss']
+
+        let concat = [...a,...b]
+        let result = [...new Set(concat)];
+        console.log(result);
+    </script>
+</body>
+</html>

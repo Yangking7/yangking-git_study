@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(y = 'aaa') {
+            console.log(y);
+        }
+        foo('bbb')
+
+        new foo();
+        foo.bind()('luotao',{a:'haha'})
+
+        // name 返回函数名字
+        console.log(foo.name);
+
+        // 因为箭头函数没有this bind 不可能改bindthis 执行
+        // this===window
+        let res = (()=>this.x).bind({x:'inner'})()
+
+        let res1 = (function () {return this.x}).bind({x:'inner'})()
+        console.log(res,res1);
+    </script>
+</body>
+</html>

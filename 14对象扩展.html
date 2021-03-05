@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = 'asddas';
+        let key = 'cname';
+        let login = {
+            namescope:'login'
+        }
+        let fun = 'func'
+        let obj = {
+
+        }
+
+
+        // 将obj 合并login
+        // Object.assigin() 将参二后面的所有参数合并到第一个参数中
+        // 所有的参数为对象
+        // 返回合并后对象,浅拷贝
+        // 实现深拷贝 第一个参数传入空对象
+        let login1 = Object.assign(login,obj,{aaaa:'cccc'});
+        console.log(login);
+        login.newKey = 'xin曾敏';
+        console.log(login,login1);
+        // 深拷贝
+        let login2 = Object.assign({},login,obj,{aaaa:'cccc'});
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'myDiv'></div>
+    <script>
+        const data ={};
+        const element = document.getElementById('myDiv')
+
+        data[element] = 'metadata';
+        data['[object HtMLDivElement]']
+
+
+        let mapObj = new Map();
+        mapObj(element,'dom元素对象key')
+        console.log(mapObj);
+
+        // 实例化map 对象
+        // map 的key 支持 其他数据 可以形成 试一试 的数据结构
+        // map.set(key,value) 往map 中新增 修改 属性
+        // map.get(key) 获取属性对象为key
+
+        let mapObj =new Map();
+        mapObj.set(element,'dom元素对象为key')
+        console.log(mapObj);
+        console.log(mapObj).get(element);
+        // mapObj
+        console.log(mapObj,has(element));
+        // map.delete(key) 删除 数据
+        
+    </script>
+</body>
+</html>

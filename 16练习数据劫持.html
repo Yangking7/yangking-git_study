@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 收集用户修改的内容
+        // let watcher = []
+        // let obj = {
+        //     name:'xieke',
+        //     age:123
+        // }
+        // let _name = name;
+        // Object.defineProperty(obj,'name',{
+        //     get(){
+        //         return _name;
+        //     },
+        //     set(val){
+        //         // 监听者，当发生变化时候：告诉收集，‘变化内容是什么’
+        //         console.log('监听name');
+        //         lister(val)
+        //         // 收集者：将监听这通知的信息，进行收集处理并添加到watcher中
+
+        //         // 最后完成修改
+        //         _name = val
+        //     }
+        // })
+        // obj.name  = 'hexiantao'
+        // // 监听者
+        // function lister(val) {
+        //     console.log(val);
+        //     console.log('修改了，监听到变化后的值为',val);
+        //     devlop(val)
+        // }
+        // // 收集者
+        // function devlop(val){
+        //     console.log('我已经开始收集了');
+        //     watcher.push(val)
+        // }
+
+
+        // 作用：对某个对象下某个属性进行数据劫持处理
+        // 1.对哪一个对象进行劫持处理
+        // 2.该对象下哪个属性进行劫持处理
+        // 3.数据修改了以后做什么？
+        //  done 数据修改后 回调函数
+        let watcher = []
+        let obj = {
+            name:'xieke',
+            age:123
+        }
+        Object.keys(obj).forEach(key=>{
+            defineReactive(obj,key)
+        })
+        
+        function defineReactive(obj,key){
+            let oldVal = obj[key];
+            Object.defineProperty(obj,key,{
+                get(){
+                    console.log('获取了'+key);
+                    return oldVal
+                },
+                set(newVal){
+                    console.log('修改了'+key);
+                    oldVal = newVal;
+                    done(newVal,oldVal)
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Set 方式去重
+
+        let str = [1,1,1,2,2,2,3,4,4,4];
+        let set = new Set(str);
+        set.add('添加元素')
+        // set中只能添加一个NaN
+        set.add(NaN);
+        console.log(set.size);//相当于数组长度
+        // set.delete 删除 set 中元素
+        set.delete('添加元素')
+        // 判断set数组中是否有3
+        set.has(3)?console.log('有3'):console.log('没有3');
+        let arr = [...set];
+        console.log(arr);
+    </script>  
+</body>
+</html>

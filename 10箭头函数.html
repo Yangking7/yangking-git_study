@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fun = function(){
+            console.log('fun');
+        }
+        // 用箭头函数代替function 匿名函数
+        // 1.箭头函数没有arguments；有rest 参数
+        // 2.没有this
+        let fun1 = ()=>{
+            console.log(fun1);
+        }
+        fun();
+        fun1();
+
+        // 简写 res形参 返回：res+123
+        // 1.一个形参
+        // 2.函数方法体直接用返回值
+        let fun2 = res=>res+123;
+        console.log(fun2(3));
+
+        let fun3 = (a,b,c)=>123;
+        console.log(fun3());
+
+
+        // 合并对象方法
+        // let assigin = (obj1,obj2)=>{
+        //     let obj = {...obj1,...obj2}
+        //     return obj
+        // }
+        // let assigin = (obj1,obj2)=>{
+        //     return Object.assign(obj1,obj2)
+        // }
+
+        // 简写
+        // Object.assigin() 合并对象 返回合并后的对象
+        let assigin = (obj1,obj2)=>Object.assign(obj1,obj2); // 省略return 返回值简写
+
+        var person={
+            name:'123'
+        }
+        var student = {
+            age:12
+        }
+        console.log(assigin(person,student));
+    </script>
+</body>
+</html>

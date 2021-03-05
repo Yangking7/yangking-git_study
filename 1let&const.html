@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es5
+        // var a = 0;
+        // function a(){}
+        // console.log(a);// a= 
+
+
+        // es6
+        // let 声明的变量会形成块级作用域
+        // let 在同一个作用域下，声明的变量，禁止重复声明
+
+        let a = 0; 
+        { // a 的块级作用域
+            let a = 1;
+            {
+                console.log(a,'误区{}不是作用域');
+            }
+            console.log(a); //a = 1
+
+            var b = 123; //注意：作用域决定的是变量的访问权限，不是{}就形成了独立私有域；
+        }
+        console.log(a); // a = 0;
+        console.log(b); // b=123;
+
+        // const 声明的是常量，只能初始化赋值一次，不能重新赋值
+        const tast = 1; 
+        // tast = 2;// 报错 Assignment to constant variable.
+        console.log(tast);
+        // const tast;// 报错
+        console.log(tast);
+        // 注意：不可以将声明和赋值分开写
+        // const tast2;// 报错
+        // tast2 = 321;
+
+        /*
+            let const
+            let 变量声明
+            const 常量
+            let const 声明的都会形成块级作用域
+        */
+    </script>
+
+</body>
+
+</html>
